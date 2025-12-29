@@ -1,0 +1,154 @@
+<svg width="980" height="640" viewBox="0 0 980 640" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e293b"></stop>
+      <stop offset="100%" stop-color="#020617"></stop>
+    </linearGradient>
+
+    <linearGradient id="nodeBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"></stop>
+      <stop offset="100%" stop-color="#0ea5e9"></stop>
+    </linearGradient>
+
+    <linearGradient id="nodePurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"></stop>
+      <stop offset="100%" stop-color="#8b5cf6"></stop>
+    </linearGradient>
+
+    <linearGradient id="nodeGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e"></stop>
+      <stop offset="100%" stop-color="#16a34a"></stop>
+    </linearGradient>
+
+    <linearGradient id="nodeOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb923c"></stop>
+      <stop offset="100%" stop-color="#f97316"></stop>
+    </linearGradient>
+
+    <linearGradient id="nodePink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97373"></stop>
+      <stop offset="100%" stop-color="#fb7185"></stop>
+    </linearGradient>
+
+    <linearGradient id="nodeYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#facc15"></stop>
+      <stop offset="100%" stop-color="#eab308"></stop>
+    </linearGradient>
+
+    <linearGradient id="nodeCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"></stop>
+      <stop offset="100%" stop-color="#06b6d4"></stop>
+    </linearGradient>
+
+    <marker id="arrowHead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 9 3, 0 6" fill="#e5e7eb"></polygon>
+    </marker>
+
+    <style>
+      .node {
+        rx: 14;
+        ry: 14;
+        stroke: #020617;
+        stroke-width: 1.2;
+      }
+      .node-title {
+        font-family: system-ui;
+        font-size: 16px;
+        font-weight: 600;
+        fill: #f9fafb;
+        text-anchor: middle;
+      }
+      .node-body {
+        font-family: system-ui;
+        font-size: 12px;
+        fill: #e5e7eb;
+        text-anchor: middle;
+      }
+      .label-small {
+        font-family: system-ui;
+        font-size: 11px;
+        fill: #cbd5e1;
+        text-anchor: middle;
+      }
+      .section-title {
+        font-family: system-ui;
+        font-size: 18px;
+        font-weight: 600;
+        fill: #e5e7eb;
+      }
+      .section-sub {
+        font-family: system-ui;
+        font-size: 12px;
+        fill: #9ca3af;
+      }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="980" height="640" fill="url(#bgGrad)"></rect>
+
+  <text x="40" y="54" class="section-title">Public Notice Ingestion System</text>
+  <text x="40" y="76" class="section-sub">
+    High level architecture from user defined workload to cloud ready structured data
+  </text>
+
+  <text x="180" y="118" class="label-small">Input and configuration</text>
+  <text x="490" y="118" class="label-small">Template and execution flow</text>
+  <text x="800" y="118" class="label-small">Output and storage</text>
+
+  <!-- User Input -->
+  <rect x="80" y="140" width="200" height="80" class="node" fill="url(#nodeBlue)"></rect>
+  <text x="180" y="170" class="node-title">User Input</text>
+  <text x="180" y="192" class="node-body">states, counties, keywords,</text>
+  <text x="180" y="208" class="node-body">env, etc.</text>
+
+  <!-- Config Layer -->
+  <rect x="80" y="260" width="200" height="110" class="node" fill="url(#nodePurple)"></rect>
+  <text x="180" y="290" class="node-title">Configuration Layer</text>
+  <text x="180" y="312" class="node-body">merge env vars,</text>
+  <text x="180" y="328" class="node-body">general configs, and sysargs</text>
+
+  <!-- Template Loader -->
+  <rect x="380" y="140" width="220" height="100" class="node" fill="url(#nodeGreen)"></rect>
+  <text x="490" y="172" class="node-title">Template Loader</text>
+  <text x="490" y="194" class="node-body">dynamic import of state</text>
+  <text x="490" y="210" class="node-body">specific module</text>
+
+  <!-- Driver Layer -->
+  <rect x="380" y="270" width="220" height="100" class="node" fill="url(#nodeOrange)"></rect>
+  <text x="490" y="302" class="node-title">Driver Layer</text>
+  <text x="490" y="324" class="node-body">load county configs and then</text>
+  <text x="490" y="340" class="node-body">create/manage driver session</text>
+
+  <!-- Executor Layer -->
+  <rect x="380" y="400" width="220" height="130" class="node" fill="url(#nodePink)"></rect>
+  <text x="490" y="432" class="node-title">Executor Layer</text>
+  <text x="490" y="454" class="node-body">carry out the work order</text>
+  <text x="490" y="470" class="node-body">(navigate portal, set search,</text>
+  <text x="490" y="486" class="node-body">handle pagination, etc.)</text>
+
+  <!-- Processing Layer -->
+  <rect x="700" y="210" width="220" height="130" class="node" fill="url(#nodeYellow)"></rect>
+  <text x="810" y="242" class="node-title">Processing Layer</text>
+  <text x="810" y="264" class="node-body">clean data and build</text>
+  <text x="810" y="280" class="node-body">structured records</text>
+
+  <!-- Cloud Connector -->
+  <rect x="700" y="380" width="220" height="120" class="node" fill="url(#nodeCyan)"></rect>
+  <text x="810" y="410" class="node-title">Cloud Connector</text>
+  <text x="810" y="432" class="node-body">load into cloud storage or</text>
+  <text x="810" y="448" class="node-body">warehouse tables</text>
+
+  <!-- Resolver badge -->
+  <rect x="400" y="546" width="180" height="44" rx="12" ry="12" fill="none" stroke="#f97373" stroke-width="1.2"></rect>
+  <text x="490" y="565" class="node-body">optional resolver modules for</text>
+  <text x="490" y="581" class="node-body">anti automation challenges</text>
+
+  <!-- Arrows -->
+  <line x1="180" y1="220" x2="180" y2="252" stroke="#e5e7eb" stroke-width="2" marker-end="url(#arrowHead)"></line>
+  <line x1="280" y1="292" x2="372" y2="192" stroke="#e5e7eb" stroke-width="2" marker-end="url(#arrowHead)"></line>
+  <line x1="490" y1="240" x2="490" y2="262" stroke="#e5e7eb" stroke-width="2" marker-end="url(#arrowHead)"></line>
+  <line x1="490" y1="370" x2="490" y2="392" stroke="#e5e7eb" stroke-width="2" marker-end="url(#arrowHead)"></line>
+  <line x1="600" y1="458" x2="692" y2="276" stroke="#e5e7eb" stroke-width="2" marker-end="url(#arrowHead)"></line>
+  <line x1="810" y1="342" x2="810" y2="372" stroke="#e5e7eb" stroke-width="2" marker-end="url(#arrowHead)"></line>
+  <line x1="490" y1="532" x2="490" y2="542" stroke="#e5e7eb" stroke-width="1.6" marker-end="url(#arrowHead)"></line>
+</svg>
